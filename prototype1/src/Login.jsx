@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom"
+import "./App.css"
 
 function Login() {
     return (
         <div className="login-container">
             <h2>Login</h2>
             <form action="/login" method="POST">
-                <label htmlFor="email">email:</label>
-                <input type="email" name="email" id="email" />
+                <input type="email" name="email" id="email" placeholder="Email*" required />
 
-                <label htmlFor="password">password:</label>
-                <input type="password" name="password" id="password" />
+                <input type="password" name="password" id="password" placeholder="Password*" required />
 
                 <input type="submit" value="Login" />
             </form>
