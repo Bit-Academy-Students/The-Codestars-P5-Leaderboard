@@ -1,0 +1,18 @@
+{
+  "name": "p5-leaderboard",
+  "version": "1.0.0",
+  "description": "Mock P5 leaderboard rewritten in Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>P5 Mock Leaderboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1, h2 { margin-bottom: 10px; }
+    form { margin-bottom: 30px; padding: 15px; border: 1px solid #ccc; max-width: 400px; }
+    label { display: block; margin-top: 10px; }
+    select, input { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 8px 12px; cursor: pointer; }
+    table { border-collapse: collapse; width: 100%; max-width: 700px; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    #message { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>P5 Mock Leaderboard</h1>
+
+  <h2>Filter</h2>
+  <label>
+    <input type="radio" name="mode" value="teams" checked> Teams
+  </label>
+  <label>
+    <input type="radio" name="mode" value="students"> Students
+  </label>
+
+  <h2>Add Points</h2>
+  <form id="score-form">
+    <label for="target">Target (team or student)</label>
+    <select id="target"></select>
+
+    <label for="points">Points</label>
+    <input type="number" id="points" value="10" required />
+
+    <button type="submit">Add Points</button>
+  </form>
+
+  <p id="message"></p>
+
+  <h2>Leaderboard</h2>
+  <table id="leaderboard-table">
+    <thead>
+      <tr id="leaderboard-header">
+      </tr>
+    </thead>
+    <tbody id="leaderboard-body">
+    </tbody>
+  </table>
+
+
+// AI
+  <script>
+    const scoreForm = document.getElementById('score-form');
+    const targetSelect = document.getElementById('target');
+    const pointsInput = document.getElementById('points');
+    const message = document.getElementById('message');
+    const leaderboardHeader = document.getElementById('leaderboard-header');
+    const leaderboardBody = document.getElementById('leaderboard-body');
+    const modeRadios = document.querySelectorAll('input[name="mode"]');
+
+    const MOCK_COACH_ID = 1; // for now
+
+    let currentMode = 'teams'; // 'teams' or 'students';
+
+    modeRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        currentMode = radio.value;
+        loadTargets();
+        loadLeaderboard();
+      });
+    });
+
+    async function loadTargets() {
+      const url = currentMode === 'teams' ? '/api/teams' : '/api/students';
+      const res = await fetch(url);
+      const data = await res.json();
+
+      targetSelect.innerHTML = '';
+
+      data.forEach(item => {
+        const opt = document.createElement('option');
+        if (currentMode === 'teams') {
+          opt.value = `team-${item.id}`;
+          opt.textContent = `${item.name} (${item.location_name})`;
+        } else {
+          opt.value = `student-${item.id}`;
+          opt.textContent = `${item.name} (${item.team_name})`;
+        }
+        targetSelect.appendChild(opt);
+      });
+    }
+
+    async function loadLeaderboard() {
+      const url = currentMode === 'teams' 
+        ? '/api/leaderboard/teams'
+        : '/api/leaderboard/students';
+
+      const res = await fetch(url);
+      const data = await res.json();
+
+      // Set table header
+      leaderboardHeader.innerHTML = '';
+      if (currentMode === 'teams') {
+        leaderboardHeader.innerHTML = `
+          <th>Position</th>
+          <th>Team</th>
+          <th>Location</th>
+          <th>Total Points</th>
+        `;
+      } else {
+        leaderboardHeader.innerHTML = `
+          <th>Position</th>
+          <th>Student</th>
+          <th>Team</th>
+          <th>Total Points</th>
+        `;
+      }
+
+      // Fill rows
+      leaderboardBody.innerHTML = '';
+      data.forEach((row, index) => {
+        const tr = document.createElement('tr');
+        const pos = document.createElement('td');
+        pos.textContent = index + 1;
+        tr.appendChild(pos);
+
+        if (currentMode === 'teams') {
+          const name = document.createElement('td');
+          name.textContent = row.team_name;
+          const loc = document.createElement('td');
+          loc.textContent = row.location_name;
+          const pts = document.createElement('td');
+          pts.textContent = row.total_points;
+          tr.appendChild(name);
+          tr.appendChild(loc);
+          tr.appendChild(pts);
+        } else {
+          const name = document.createElement('td');
+          name.textContent = row.student_name;
+          const team = document.createElement('td');
+          team.textContent = row.team_name;
+          const pts = document.createElement('td');
+          pts.textContent = row.total_points;
+          tr.appendChild(name);
+          tr.appendChild(team);
+          tr.appendChild(pts);
+        }
+
+        leaderboardBody.appendChild(tr);
+      });
+    }
+
+    scoreForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      message.textContent = '';
+
+      const targetValue = targetSelect.value; // e.g. "team-1" or "student-3"
+      const [type, idStr] = targetValue.split('-');
+      const id = parseInt(idStr, 10);
+      const points = parseInt(pointsInput.value, 10);
+
+      const body = {
+        coachId: MOCK_COACH_ID,
+        eventId: 1, // use a fixed event for now, or change later
+        points
+      };
+
+      if (type === 'team') {
+        body.teamId = id;
+      } else {
+        body.studentId = id;
+      }
+
+      try {
+        const res = await fetch('/api/scores', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          message.style.color = 'red';
+          message.textContent = data.error || 'Error adding points';
+          return;
+        }
+
+        message.style.color = 'green';
+        message.textContent = 'Points added!';
+        await loadLeaderboard();
+      } catch (err) {
+        console.error(err);
+        message.style.color = 'red';
+        message.textContent = 'Something went wrong.';
+      }
+    });
+
+    // Initial load
+    (async function init() {
+      await loadTargets();
+      await loadLeaderboard();
+    })();
+  </script>
+</body>
+</html>
