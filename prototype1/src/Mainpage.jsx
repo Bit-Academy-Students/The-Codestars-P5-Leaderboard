@@ -6,6 +6,7 @@ function Mainpage() {
             <h1>Welcome to the App</h1>
             <p>
                 <Link to="/Login-Prototype">Login page prototype</Link>
+                <Link to="/Register">Register page prototype</Link>
             </p>
         </div>
     );
