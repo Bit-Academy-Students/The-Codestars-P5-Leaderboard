@@ -2,26 +2,25 @@ import "./App.css"
 
 function Register() {
     return (
-        <div>
-            <h1>Register page</h1>
-            <form action="/register" method="POST">
-                <label for="name">name:</label>
-                <input type="text" name="name" id="name" />
+        <div className="card">
+            <div className="register-form">
+                <h2>Register page</h2>
+                <form action="/register" method="POST">
+                    <input type="text" name="name" id="name" placeholder="Naam*" required />
 
-                <label for="email">email:</label>
-                <input type="email" name="email" id="email" />
-                
-                <label for="password">password:</label>
-                <input type="password" name="password" id="password" />
-                
-                <label for="role">role:</label>
-                <select name="role" id="role">
-                    <option value="admin">Coach</option>
-                    <option value="student">Student</option>
-                </select>
-                
-                <input type="submit" value="Register" />
-            </form>
+                    <input type="email" name="email" id="email" placeholder="Email*" required />
+
+                    <input type="password" name="password" id="password" placeholder="Wachtwoord*" required />
+
+                    <label htmlFor="role">Rol:</label>
+                    <select name="role" id="role">
+                        <option value="student">Student</option>
+                        <option value="admin">Coach</option>
+                    </select>
+
+                    <input type="submit" value="Register" />
+                </form>
+            </div>
         </div>
     )
 }
