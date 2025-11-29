@@ -8,7 +8,7 @@ function ForgotPassword() {
                 <form action="/login" method="POST">
                     <input type="email" name="email" id="email" placeholder="Email*" required />
 
-                    <input type="submit" value="Vraag nieuw wachtwoord aan" />
+                    <input className="btn" type="submit" value="Vraag nieuw wachtwoord aan" />
                 </form>
             </div>
         </div>

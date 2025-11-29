@@ -11,7 +11,7 @@ function Login() {
 
                     <input type="password" name="password" id="password" placeholder="Wachtwoord*" required />
 
-                    <input type="submit" value="Inloggen" />
+                    <input className="btn" type="submit" value="Inloggen" />
                 </form>
                 <p>
                     <Link className="link" to="/forgot-password">Wachtwoord vergeten?</Link>
