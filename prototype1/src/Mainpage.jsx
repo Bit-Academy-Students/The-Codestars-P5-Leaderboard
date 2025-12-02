@@ -3,14 +3,9 @@ import "./App.css";
 
 function Mainpage() {
     return (
-        <div className="card">
-            <h1>Welcome to the App</h1>
-            <p>
-                <Link className="link" to="/Login-Prototype">Login page prototype</Link>
-            </p>
-            <p>
-                <Link className="link" to="/Register">Register page prototype</Link>
-            </p>
+        <div className="card flex flex-col">
+            <p className="text-3xl font-bold mb-5">Welcome to the App</p>
+            <a href="/Login-Prototype">Login page prototype</a>
         </div>
     );
 }
