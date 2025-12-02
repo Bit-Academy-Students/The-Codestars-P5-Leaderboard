@@ -10,7 +10,7 @@ function ForgotPassword() {
                     <div className="relative">
                         <input type="email" name="email" id="email" placeholder="Email*" required />
                     </div>
-                    <input className="btn" type="submit" value="Vraag nieuw wachtwoord aan" />
+                    <input className="btn text-lg font-bold" type="submit" value="Vraag nieuw wachtwoord aan" />
                 </form>
                 <a href="/Login-Prototype">Ga terug naar de login pagina</a>
             </div>
