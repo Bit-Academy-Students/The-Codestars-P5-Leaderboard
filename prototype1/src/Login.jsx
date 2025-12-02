@@ -13,7 +13,7 @@ function Login() {
     return (
         <div className="card">
             <div className="login-form">
-                <p className="text-3xl font-bold mb-5">Login</p>
+                <p className="text-3xl font-bold mb-10">Login</p>
                 <form className="mb-5" action="/login" method="POST">
                     <div className="relative">
                         <input type="email" name="email" id="email" placeholder="Email*" required />
@@ -24,7 +24,7 @@ function Login() {
                             {showPassword ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
                         </div>
                     </div>
-                    <input className="btn" type="submit" value="Inloggen" />
+                    <input className="btn text-lg font-bold" type="submit" value="Inloggen" />
                 </form>
                 <p>
                     <Link className="link" to="/forgot-password">Wachtwoord vergeten?</Link>
