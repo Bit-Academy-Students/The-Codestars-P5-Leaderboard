@@ -1,15 +1,22 @@
-INSERT INTO users (name, email, role) VALUES
-  ('Coach Thomas', 'coach@example.com', 'coach'),
-  ('Admin Marieke', 'admin@example.com', 'admin');
+INSERT INTO locations (name) VALUES
+  ('Amsterdam');
+
+INSERT INTO users (name, email, password_hash, role) VALUES
+  ('Coach Thomas', 'coach@example.com',
+    '$2a$10$vI8aWBnW3fID.ZQ4/zo1G.0yWlH0hZ1IsfRSAxEPPGjBJOCa/MEGa', 'coach'),
+  ('Admin Marieke', 'admin@example.com',
+    '$2a$10$vI8aWBnW3fID.ZQ4/zo1G.0yWlH0hZ1IsfRSAxEPPGjBJOCa/MEGa', 'admin');
 
 INSERT INTO teams (name, location_id) VALUES
   ('PixelPioneers', 1),
   ('CodeCrushers', 1);
+  ('Bit', 1);
 
 INSERT INTO students (name, team_id) VALUES
   ('Jason', 1),
   ('Alice', 1),
   ('Bob', 2);
+  ('Ali', 2);
 
 INSERT INTO events (name, points_default, is_team_based, allow_negative) VALUES
   ('Prototype opleveren', 10, 1, 0),
