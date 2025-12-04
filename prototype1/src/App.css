@@ -19,12 +19,12 @@
 body {
     margin: 0;
     background: linear-gradient(180deg,
-            rgb(15 32 39 / 1) 0%,
-            rgb(32 58 67 / 1) 39.1%,
-            rgb(44 83 100 / 1) 100%) fixed no-repeat;
-            background-color: white;
-            background-size: cover;
-        }
+    #0f2027 0%,
+    #203a43 39.1%,
+    #2c5364 100%) fixed no-repeat;
+    background-color: white;
+    background-size: cover;
+}
 */
 
 /*
@@ -76,7 +76,7 @@ body {
     margin: auto;
     padding: 3rem;
     border-radius: 2.5rem;
-    background: rgba(10, 21, 26, 0.7);
+    background: #0a151ab3;
     min-width: fit-content;
     max-width: fit-content;
     color: white;
