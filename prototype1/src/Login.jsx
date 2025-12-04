@@ -3,8 +3,6 @@ import { useState } from "react";
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 
-import "./App.css"
-
 function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const togglePasswordVisibility = () => {
