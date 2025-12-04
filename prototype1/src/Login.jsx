@@ -30,6 +30,9 @@ function Login() {
                     <Link className="text-black no-underline" to="/forgot-password">Wachtwoord vergeten?</Link>
                 </p>
                 <p>
+                    <Link className="text-black no-underline" to="/registerpage">Nog geen account? Registreer hier!</Link>
+                </p>
+                <p>
                     <Link className="text-black no-underline" to="/">Naar start pagina</Link>
                 </p>
             </div>
