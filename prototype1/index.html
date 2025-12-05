@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<head>
+<head data-theme="dark">
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="src/App.css" />
@@ -9,10 +9,11 @@
     <title>Codestar</title>
 </head>
 
-<body>
-    <div class="bg-stars"></div>
-    <div id="root"></div>
+<body data-theme="dark" class="bg-white dark:bg-linear-[180deg,#0f2027_0%,#203a43_39.1%,#2c5364_100%] m-0 bg-fixed no-repeat">
+    <div class="bg-[url(./assets/stars-bg-dark.svg)] bg-stars absolute h-screen w-screen invert dark:invert-0"></div>
+    <div class="font-[sans-serif] text-center block h-screen w-screen absolute top-0 left-0" id="root"></div>
     <script type="module" src="src/main.jsx"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
