@@ -17,11 +17,11 @@ function RegisterPage() {
 
                     <form className="mb-5 flex flex-col gap-4 items-center" action="/register" method="POST">
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="text" name="username" id="username" placeholder="Username*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="text" name="username" id="username" placeholder="Volledige naam*" required />
                         </div>
 
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="email" name="email" id="email" placeholder="Email*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="email" name="email" id="email" placeholder="E-mail*" required />
                         </div>
 
                         <div className="relative placeholder-black">
