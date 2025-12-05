@@ -46,19 +46,19 @@ function ThemeToggle() {
             </button>
 
             {isModalOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={() => setIsModalOpen(false)}>
+                <div className="fixed inset-0 bg-[#00000069] bg-opacity-50 flex items-center justify-center z-50" onClick={() => setIsModalOpen(false)}>
                     <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl max-w-sm w-full mx-4" onClick={(e) => e.stopPropagation()}>
                         <h2 className="text-2xl font-bold mb-4 text-black dark:text-white">
                             Kies thema
                         </h2>
                         <div className="flex flex-col gap-3">
-                            <button onClick={() => handleThemeChange('light')} className={`p-4 rounded-lg text-left font-semibold transition-all ${theme === 'light' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                            <button onClick={() => handleThemeChange('light')} className={`p-4 rounded-lg text-center font-semibold transition-all ${theme === 'light' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
                                 ☀️ Light Mode
                             </button>
-                            <button onClick={() => handleThemeChange('dark')} className={`p-4 rounded-lg text-left font-semibold transition-all ${theme === 'dark' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                            <button onClick={() => handleThemeChange('dark')} className={`p-4 rounded-lg text-center font-semibold transition-all ${theme === 'dark' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
                                 🌙 Dark Mode
                             </button>
-                            <button onClick={() => handleThemeChange('system')} className={`p-4 rounded-lg text-left font-semibold transition-all ${theme === 'system' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                            <button onClick={() => handleThemeChange('system')} className={`p-4 rounded-lg text-center font-semibold transition-all ${theme === 'system' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
                                 💻 Systeem Voorkeur
                             </button>
                         </div>

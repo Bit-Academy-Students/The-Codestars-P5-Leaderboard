@@ -17,15 +17,15 @@ function RegisterPage() {
 
                     <form className="mb-5 flex flex-col gap-4 items-center" action="/register" method="POST">
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black border-2 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="text" name="username" id="username" placeholder="Username*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="text" name="username" id="username" placeholder="Username*" required />
                         </div>
 
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black border-2 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="email" name="email" id="email" placeholder="Email*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="email" name="email" id="email" placeholder="Email*" required />
                         </div>
 
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black border-2 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Wachtwoord*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Wachtwoord*" required />
                             <div className="absolute right-4 top-4 cursor-pointer dark:text-white" onClick={togglePasswordVisibility} aria-label="toggle password visibility">
                                 {showPassword ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
                             </div>
