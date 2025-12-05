@@ -11,9 +11,9 @@ function ForgotPassword() {
                     
                     <form className="mb-5 flex flex-col gap-4 items-center" action="/login" method="POST">
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 border-solid rounded-2xl w-108 bg-[#ffffff1a] dark:text-white dark:border-[#ffffff1a]" type="email" name="email" id="email" placeholder="E-mail*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 border-solid rounded-2xl w-108 bg-[#ffffff1a] dark:text-white dark:border-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="email" name="email" id="email" placeholder="E-mail*" required />
                         </div>
-                        <button className="bg-[#2be295] w-52 p-2 rounded-4xl mt-6 min-w-fit text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer text-lg font-bold" type="submit">Vraag nieuw wachtwoord aan</button>
+                        <button className="bg-[#2be295] w-52 p-2 rounded-4xl mt-6 min-w-fit text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer text-lg font-bold hover:bg-[#27c17a] active:shadow-none" type="submit">Vraag nieuw wachtwoord aan</button>
                     </form>
                     <Link className="text-black dark:text-white no-underline" to="/Login-Prototype">Ga terug naar de login pagina</Link>
                 </div>

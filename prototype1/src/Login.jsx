@@ -16,15 +16,15 @@ function Login() {
                     <p className="text-3xl font-bold mb-10 dark:text-white">Login</p>
                     <form className="mb-5 flex flex-col gap-4 items-center" action="/login" method="POST">
                         <div className="relative ">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="email" name="email" id="email" placeholder="E-mail*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="email" name="email" id="email" placeholder="E-mail*" required />
                         </div>
                         <div className="relative">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Wachtwoord*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Wachtwoord*" required />
                             <div className="absolute right-4 top-4 cursor-pointer dark:text-white" onClick={togglePasswordVisibility} aria-label="toggle password visibility">
                                 {showPassword ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
                             </div>
                         </div>
-                        <button className="bg-[#2be295] w-52 p-2 rounded-4xl mt-6 min-w-fit text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer text-lg font-bold" type="submit">Inloggen</button>
+                        <button className="bg-[#2be295] w-52 p-2 rounded-4xl mt-6 min-w-fit text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer text-lg font-bold hover:bg-[#27c17a] active:shadow-none" type="submit">Inloggen</button>
                     </form>
                     <p>
                         <Link className="text-black dark:text-white no-underline" to="/forgot-password">Wachtwoord vergeten?</Link>
