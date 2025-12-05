@@ -40,7 +40,7 @@ function ThemeToggle() {
         <>
             <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#2be295] px-4 py-2 rounded-lg font-bold text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer"
+                className="bg-[#2be295] px-4 py-2 rounded-lg font-bold text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer hover:bg-[#27c17a] active:shadow-none"
             >
                 {getButtonText()}
             </button>
@@ -52,17 +52,17 @@ function ThemeToggle() {
                             Kies thema
                         </h2>
                         <div className="flex flex-col gap-3">
-                            <button onClick={() => handleThemeChange('light')} className={`p-4 rounded-lg text-center font-semibold transition-all ${theme === 'light' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                            <button onClick={() => handleThemeChange('light')} className={`p-4 rounded-lg text-center font-semibold transition-all shadow-[0px_-6px_#0f202733_inset] active:shadow-none ${theme === 'light' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
                                 ☀️ Light Mode
                             </button>
-                            <button onClick={() => handleThemeChange('dark')} className={`p-4 rounded-lg text-center font-semibold transition-all ${theme === 'dark' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                            <button onClick={() => handleThemeChange('dark')} className={`p-4 rounded-lg text-center font-semibold transition-all shadow-[0px_-6px_#0f202733_inset] active:shadow-none ${theme === 'dark' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
                                 🌙 Dark Mode
                             </button>
-                            <button onClick={() => handleThemeChange('system')} className={`p-4 rounded-lg text-center font-semibold transition-all ${theme === 'system' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
+                            <button onClick={() => handleThemeChange('system')} className={`p-4 rounded-lg text-center font-semibold transition-all shadow-[0px_-6px_#0f202733_inset] active:shadow-none ${theme === 'system' ? 'bg-[#2be295] text-black' : 'bg-gray-100 dark:bg-gray-700 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
                                 💻 Systeem Voorkeur
                             </button>
                         </div>
-                        <button onClick={() => setIsModalOpen(false)} className="mt-4 w-full p-3 rounded-lg bg-gray-200 dark:bg-gray-600 text-black dark:text-white font-semibold hover:bg-gray-300 dark:hover:bg-gray-500">
+                        <button onClick={() => setIsModalOpen(false)} className="mt-10 w-full p-3 rounded-lg bg-gray-200 dark:bg-gray-600 text-black dark:text-white font-semibold hover:bg-gray-300 dark:hover:bg-gray-500 shadow-[0px_-6px_#0f202733_inset] active:shadow-none">
                             Sluiten
                         </button>
                     </div>
