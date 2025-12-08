@@ -12,6 +12,9 @@ function Mainpage() {
                 <p>
                     <Link className="text-black dark:text-white no-underline" to="/registerpage">register page prototype</Link>
                 </p>
+                <p>
+                    <Link className="text-black dark:text-white no-underline" to="/leaderboardpage">leaderboard page prototype</Link>
+                </p>
             </div>
             <div className="fixed bottom-4 left-4 z-50">
                 <ThemeToggle />

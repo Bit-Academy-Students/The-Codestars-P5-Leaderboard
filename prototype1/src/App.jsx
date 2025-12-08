@@ -3,6 +3,7 @@ import Mainpage from "./Mainpage";
 import Login from "./Login";
 import ForgotPassword from "./forgot-password";
 import RegisterPage from "./registerpage";
+import LeaderboardPage from "./leaderboardpage.jsx";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/Login-Prototype" element={<Login />} />
                 <Route path="/Forgot-Password" element={<ForgotPassword />} />
                 <Route path="/registerpage" element={<RegisterPage />} />
+                <Route path="/leaderboardpage" element={<LeaderboardPage />} />
             </Routes>
         </BrowserRouter>
     );
