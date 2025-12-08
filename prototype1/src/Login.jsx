@@ -35,9 +35,6 @@ function Login() {
                     <p className="mt-4">
                         <Link className="text-black dark:text-white font-bold no-underline" to="/">Naar start pagina</Link>
                     </p>
-                    <p>
-                        <Link className="text-black dark:text-white no-underline" to="./Leaderboardpage">Naar start pagina</Link>
-                    </p>
                 </div>
             </div>
             <div className="fixed bottom-4 left-4 z-50">
