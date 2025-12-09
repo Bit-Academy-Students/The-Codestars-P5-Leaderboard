@@ -5,7 +5,7 @@ import Accordion from "./Accordion";
 function Leaderboard() {
     return (
         <>
-            <container className="card m-auto p-2 min-w-screen max-w-screen absolute top-1/10 left-1/2 transform -translate-x-1/2  items-center">
+            <div className="card m-auto p-2 min-w-screen max-w-screen absolute top-1/10 left-1/2 transform -translate-x-1/2  items-center">
                 <div className="mb-5">
                     <p className="text-4xl font-bold dark:text-white">Leaderboard</p>
                 </div>
@@ -32,7 +32,7 @@ function Leaderboard() {
                             </div>
                         ]}
                         details={[
-                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-xl dark:bg-black dark:text-white">
+                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-b-xl dark:bg-black dark:text-white">
                                 <div className="text-black dark:text-white"><p>Team Members</p></div>
                             </div>
                     ]}/>
@@ -58,7 +58,7 @@ function Leaderboard() {
                             </div>
                         ]}
                         details={[
-                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-row p-3 rounded-b-xl dark:bg-black dark:text-white">
+                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-b-xl dark:bg-black dark:text-white">
                                 <div className="text-black dark:text-white"><p>Team Members</p></div>
                             </div>
                     ]}/>
@@ -89,7 +89,7 @@ function Leaderboard() {
                             </div>
                     ]}/>
                 </div>
-            </container>
+            </div>
             <div className="fixed bottom-4 left-4 z-50">
                 <ThemeToggle />
             </div>
