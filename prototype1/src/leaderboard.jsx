@@ -32,8 +32,9 @@ function Leaderboard() {
                             </div>
                         ]}
                         details={[
-                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-b-xl dark:bg-black dark:text-white">
-                                <div className="text-black dark:text-white"><p>Team Members</p></div>
+                            <div className="bg-white w-95 text-left sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-b-xl dark:bg-black dark:text-white">
+                                <div className="text-black flex-1 dark:text-white"><p>Team Members</p></div>
+                                <div className="text-black flex-1 dark:text-white"><p>Project Details</p></div>
                             </div>
                     ]}/>
                     <Accordion info={[
@@ -58,34 +59,9 @@ function Leaderboard() {
                             </div>
                         ]}
                         details={[
-                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-b-xl dark:bg-black dark:text-white">
-                                <div className="text-black dark:text-white"><p>Team Members</p></div>
-                            </div>
-                    ]}/>
-                    <Accordion info={[
-                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-xl dark:bg-black dark:text-white">
-                                <div className="flex flex-1 gap-1 flex-cols-3">
-                                    <div className="text-left">
-                                        <p>01</p>
-                                    </div>
-                                    <div className="text-left"> 
-                                        <AccountCircleOutlinedIcon />
-                                    </div>
-                                    <div className="text-left">
-                                        <p>The Codestars</p>
-                                    </div>
-                                </div>
-                                <div className="flex flex-1 gap-1 justify-between flex-cols-2">
-                                    <div className="text-left"><p>Leaderboard</p></div>
-                                    <div className="text-right ">
-                                        <p>150 Bits</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ]}
-                        details={[
-                            <div className="bg-white w-95 sm:w-xl md:w-2xl lg:w-3xl flex flex-row p-3 rounded-b-xl dark:bg-black dark:text-white">
-                                <div className="text-black dark:text-white"><p>Team Members</p></div>
+                            <div className="bg-white w-95 text-left sm:w-xl md:w-2xl lg:w-3xl flex flex-cols-2 p-3 rounded-b-xl dark:bg-black dark:text-white">
+                                <div className="text-black flex-1 dark:text-white"><p>Team Members</p></div>
+                                <div className="text-black flex-1 dark:text-white"><p>Project Details</p></div>
                             </div>
                     ]}/>
                 </div>
