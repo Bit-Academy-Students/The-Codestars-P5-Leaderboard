@@ -15,6 +15,9 @@ function Mainpage() {
                 <p className="mt-4">
                     <Link className="text-black dark:text-white font-bold no-underline" to="/leaderboardpage">Leaderboard</Link>
                 </p>
+                <p className="mt-4">
+                    <Link className="text-black dark:text-white font-bold no-underline" to="/adminpage">Admin Page</Link>
+                </p>
             </div>
             <div className="fixed bottom-4 left-4 z-50">
                 <ThemeToggle />
