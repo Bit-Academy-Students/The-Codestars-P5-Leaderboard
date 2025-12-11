@@ -37,9 +37,13 @@ function Leaderboard() {
                                 <div id='icon' className="flex flex-1 gap-1">
                                     <div className='w-6'></div>
                                     <AccountCircleOutlinedIcon/>
-                                    <div id='teamMembers'><p>Team Members</p></div>
+                                    <div id='teamMembers'>
+                                        <p>Team Members</p>
+                                    </div>
                                 </div>
-                                <div id='projectDetails' className="flex-1"><p>Project Details</p></div>
+                                <div id='projectDetails' className="flex-1">
+                                    <p>Project Details</p>
+                                </div>
                             </div>
                     ]}/>
                     <p className="mt-4">
