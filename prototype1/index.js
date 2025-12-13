@@ -47,29 +47,38 @@ app.post('/register', (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
-    db.get(`SELECT * FROM users WHERE email = ?`, [email], (err, user) => {
-        if (err) {
-            return res.status(500).send(`Error: ${err.message}`);
-        }
-
-        if (!user) {
-            return res.status(401).send('Invalid email or password');
-        }
-
-        bcrypt.compare(password, user.password_hash, (err, match) => {
+    db.get(
+        'SELECT * FROM users WHERE email = ?',
+        [email],
+        (err, user) => {
+            // 1. Database error (system failure)
             if (err) {
                 return res.status(500).send(`Error: ${err.message}`);
             }
 
-            if (match) {
-                res.send(`Welcome ${user.name}`);
-            } else {
-                res.status(401).send(`Error: ${err.message}`);
+            // 2. No user found (expected state)
+            if (!user) {
+                return res.status(401).send('Invalid email or password');
             }
-        })
-    })
-})
+
+            bcrypt.compare(password, user.password_hash, (err, match) => {
+                // 3. bcrypt error (system failure)
+                if (err) {
+                    return res.status(500).send(`Error: ${err.message}`);
+                }
+
+                // 4. Password incorrect (expected state
+                if (!match) {
+                    return res.status(401).send('invalid email or password');
+                }
+
+                // 5. Success
+                res.send(`Welcome ${user.name}`);
+            });
+        }
+    );
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
-})
+});
