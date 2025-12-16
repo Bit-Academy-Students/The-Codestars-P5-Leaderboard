@@ -11,29 +11,34 @@ function RegisterPage() {
     }
     return (
         <>
-            <div className="card m-auto p-12 rounded-[2.5rem] bg-[#f0e8d8b3] min-w-fit max-w-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:bg-[#0a151ab3]">
+            <div className="card  m-auto sm:w-xl px-5 p-12 rounded-[2.5rem] bg-[#f0e8d8b3] min-w-xs max-w-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:bg-[#0a151ab3]">
                 <div className="login-form mx-8">
-                    <p className="text-3xl font-bold mb-10 dark:text-white">Register</p>
+                    <p className="text-3xl font-bold mb-10 dark:text-white">Registreer</p>
 
                     <form className="mb-5 flex flex-col gap-4 items-center" action="/register" method="POST">
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="text" name="username" id="username" placeholder="Username*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-auto sm:w-sm bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="text" name="username" id="username" placeholder="Volledige naam*" required />
                         </div>
 
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type="email" name="email" id="email" placeholder="Email*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-auto sm:w-sm bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type="email" name="email" id="email" placeholder="E-mail*" required />
                         </div>
 
                         <div className="relative placeholder-black">
-                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-108 bg-[#ffffff1a]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Wachtwoord*" required />
+                            <input className="p-4 text-black font-bold border-3 border-gray-500 dark:border-[#ffffff1a] dark:text-white border-solid rounded-2xl w-auto sm:w-sm bg-[#ffffff1a] focus:border-[#2be295] focus:outline-none user-invalid:border-[#ffad00]" type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Wachtwoord*" required />
                             <div className="absolute right-4 top-4 cursor-pointer dark:text-white" onClick={togglePasswordVisibility} aria-label="toggle password visibility">
                                 {showPassword ? <VisibilityOutlinedIcon /> : <VisibilityOffOutlinedIcon />}
                             </div>
                         </div>
 
-                        <button className="bg-[#2be295] w-52 p-2 rounded-4xl mt-6 min-w-fit text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer text-lg font-bold" type="submit">Register</button>
+                        <button className="bg-[#2be295] w-52 p-2 rounded-4xl mt-2 min-w-fit text-black shadow-[0px_-3px_#0f202733_inset] cursor-pointer text-lg font-bold hover:bg-[#27c17a] active:shadow-none" type="submit">Register</button>
                     </form>
-                    <Link className="text-black dark:text-white no-underline" to="/login-prototype">login page prototype</Link>
+                    <p className="mt-10">
+                        <Link className="text-black dark:text-white font-bold no-underline" to="/login-prototype">Al een account? Inloggen</Link>
+                    </p>
+                    <p className="mt-4">
+                        <Link className="text-black dark:text-white font-bold no-underline" to="/">Naar start pagina</Link>
+                    </p>
                 </div>
             </div>
             <div className="fixed bottom-4 left-4 z-50">
