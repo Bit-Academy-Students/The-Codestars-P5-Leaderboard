@@ -4,6 +4,7 @@ import Login from "./Login";
 import ForgotPassword from "./forgot-password";
 import RegisterPage from "./registerpage";
 import LeaderboardPage from "./leaderboardpage.jsx";
+import AdminPage from "./adminpage.jsx";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/Forgot-Password" element={<ForgotPassword />} />
                 <Route path="/registerpage" element={<RegisterPage />} />
                 <Route path="/leaderboardpage" element={<LeaderboardPage />} />
+                <Route path="/adminpage" element={<AdminPage />} />
             </Routes>
         </BrowserRouter>
     );
